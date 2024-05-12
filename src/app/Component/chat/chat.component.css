@@ -1,0 +1,72 @@
+.chat-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 500px; /* ajustar el ancho máximo según sea necesario */
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0; /* Color de fondo opcional */
+  border: 1px solid #ccc; /* Borde opcional */
+  border-radius: 8px; /* Borde redondeado opcional */
+  padding: 10px; /* Espaciado interno opcional */
+  padding-bottom: 0px;
+}
+
+.messages-container {
+  overflow-y: auto; /* Permite hacer scroll si hay muchos mensajes */
+  flex: 1; /* Hace que los mensajes ocupen todo el espacio restante */
+  display: flex;
+  flex-direction: column-reverse; /* Revertir el orden de los mensajes */
+}
+
+.centered-input {
+  width: 100%;
+  margin-top: 10px; /* Espacio entre los mensajes y el input */
+}
+
+.messages {
+  text-align: right;
+  padding: 5px;
+}
+.message-from {
+  border: 1px solid #000;
+  border-radius: 10px;
+  word-wrap: break-word;
+  margin-bottom: 4px;
+  padding: 8px;
+  color: #1f3d48;
+  background-color: #e4e5e7;
+  font-weight: 400;
+  font-size: 16px;
+  width: fit-content;
+  text-align: left;
+}
+
+.message-me {
+  border: 1px solid #000;
+  border-radius: 10px;
+  word-wrap: break-word;
+  margin-bottom: 4px;
+  padding: 8px;
+  color: #1f3d48;
+  background-color: #dcf8c6;
+  font-weight: 400;
+  font-size: 16px;
+  width: fit-content;
+  text-align: left;
+  margin-left: auto;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.date {
+  font-weight: 300;
+  font-size: 10px;
+}

@@ -1,0 +1,44 @@
+<div class="body">
+  <div class="container" id="container">
+    <div class="form-container">
+      <form action="#">
+        <h1>Sign in</h1>
+        <span>Use your account</span>
+        <input
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="userMail"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          [(ngModel)]="userPWD"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        @if (loggedUser != ""){
+        <h2 class="text-center text-primary">
+          Usuario registrado: {{ loggedUser }}
+        </h2>
+        } @if(flagError){
+        <p class="text-center text-primary">{{ msjError }}</p>
+        }
+        <button (click)="login($event)">Sign In</button>
+        <button class="btn-auto-complete" (click)="autoComplete($event)">
+          Auto Complete
+        </button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signUp" (click)="goTo('register')">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

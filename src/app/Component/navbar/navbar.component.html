@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="assets/images/logo.png" alt="Logo de la aplicación" />
+  </div>
+  <div>
+    <button (click)="handleClickGoToHome()" mat-button>Inicio</button>
+    <button (click)="handleClickGoToChat()" mat-button>Chat</button>
+    <button (click)="handleClickGoToHome()" mat-button>Quién Soy</button>
+  </div>
+  <div>
+    <button (click)="handleLogout()" mat-icon-button>
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</nav>
