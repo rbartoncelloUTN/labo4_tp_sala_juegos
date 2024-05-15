@@ -15,3 +15,8 @@
   height: 40px; /* Altura del logo */
   margin-right: 16px; /* Espaciado a la derecha del logo */
 }
+
+button {
+  font-size: larger;
+  margin-right: 10px;
+}

@@ -1,0 +1,24 @@
+<div>
+  <section class="hanged-section">
+    <div>
+      <img [src]="hanged_image_path" />
+    </div>
+    <div *ngFor="let char of word_game.split(''); let i = index">
+      <button mat-flat-button>{{ word[i] }}</button>
+    </div>
+  </section>
+</div>
+
+<section class="letter-section">
+  <div class="example-button-row">
+    <div *ngFor="let letter of letters; let i = index">
+      <button
+        [disabled]="letter.clicked"
+        mat-flat-button
+        (click)="handleOnClickLetter(i)"
+      >
+        {{ letter.letter }}
+      </button>
+    </div>
+  </div>
+</section>

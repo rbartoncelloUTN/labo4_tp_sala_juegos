@@ -1,0 +1,29 @@
+.example-button-row {
+  display: flex;
+  flex-direction: row;
+  max-width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid red;
+  border-radius: 15px;
+  padding: 15px 5px;
+}
+
+.letter-section {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: flex-end; /* Alinear los elementos en la parte inferior verticalmente */
+}
+.hanged-section {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+}
+
+button {
+  margin: 5px;
+  height: 50px;
+  height: 50px;
+  font-weight: 500;
+  font-size: 20px;
+}

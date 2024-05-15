@@ -1,0 +1,26 @@
+<div class="root">
+  <div class="card-contaner">
+    <app-card
+      [path]="cards[cards.length - 1].images.png"
+      (onClick)="handleOnCardClick()"
+    ></app-card>
+  </div>
+  <div>
+    <div class="buttons-container">
+      <button
+        class="mayor-button"
+        mat-button
+        (click)="handleOnClickMayorButton()"
+      >
+        Mayor
+      </button>
+      <button
+        class="mayor-button"
+        mat-button
+        (click)="handleOnClickMinorButton()"
+      >
+        Menor
+      </button>
+    </div>
+  </div>
+</div>

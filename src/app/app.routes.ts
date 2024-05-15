@@ -7,6 +7,8 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
 import { LayoutComponent } from './Component/layout/layout.component';
 import { AboutMeComponent } from './Component/about-me/about-me.component';
 import { ChatComponent } from './Component/chat/chat.component';
+import { HangedComponent } from './Component/hanged/hanged.component';
+import { CardsGameComponent } from './Component/cards-game/cards-game.component';
 
 export type RoutesParams = 'login' | 'register' | 'home';
 
@@ -19,5 +21,7 @@ export const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'aboutMe', component: AboutMeComponent },
+  { path: 'hanged', component: HangedComponent },
+  { path: 'cards', component: CardsGameComponent },
   { path: '**', component: PageNotFoundComponentComponent },
 ];
