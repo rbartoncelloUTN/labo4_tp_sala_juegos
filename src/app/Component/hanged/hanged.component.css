@@ -1,23 +1,33 @@
-.example-button-row {
+.container {
   display: flex;
-  flex-direction: row;
-  max-width: 80%;
-  flex-wrap: wrap;
-  justify-content: center;
-  border: 1px solid red;
-  border-radius: 15px;
-  padding: 15px 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centrar verticalmente */
+  height: 100vh; /* Altura total de la ventana */
+  background-color: #555;
+}
+
+.letter-section,
+.hanged-section {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
 }
 
 .letter-section {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: flex-end; /* Alinear los elementos en la parte inferior verticalmente */
+  flex: 1;
+  justify-content: center;
 }
 .hanged-section {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
+  border: 4px solid #333;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 button {
@@ -26,4 +36,45 @@ button {
   height: 50px;
   font-weight: 500;
   font-size: 20px;
+}
+
+.example-button-row {
+  display: flex;
+  flex-direction: row;
+  max-width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #333;
+  border-radius: 15px;
+  padding: 15px 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px; /* Espaciado interno */
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave */
+
+  /* Estilos adicionales */
+  background-color: #1e88e5; /* Color de fondo */
+  color: white; /* Color del texto */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+button:hover {
+  background-color: #1565c0; /* Color de fondo más oscuro al pasar el ratón */
+}
+
+button:active {
+  background-color: #0d47a1; /* Color de fondo aún más oscuro al hacer clic */
+}
+
+img {
+  border: 4px solid #333;
+  border-radius: 20px;
 }

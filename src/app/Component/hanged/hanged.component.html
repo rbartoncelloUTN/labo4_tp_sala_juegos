@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <section class="hanged-section">
     <div>
       <img [src]="hanged_image_path" />
@@ -7,18 +7,17 @@
       <button mat-flat-button>{{ word[i] }}</button>
     </div>
   </section>
-</div>
-
-<section class="letter-section">
-  <div class="example-button-row">
-    <div *ngFor="let letter of letters; let i = index">
-      <button
-        [disabled]="letter.clicked"
-        mat-flat-button
-        (click)="handleOnClickLetter(i)"
-      >
-        {{ letter.letter }}
-      </button>
+  <section class="letter-section">
+    <div class="example-button-row">
+      <div *ngFor="let letter of letters; let i = index">
+        <button
+          [disabled]="letter.clicked"
+          mat-flat-button
+          (click)="handleOnClickLetter(i)"
+        >
+          {{ letter.letter }}
+        </button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

@@ -42,6 +42,9 @@ export class RegisterComponent {
           case 'auth/email-already-in-use':
             this.msjError = 'Email ya en uso';
             break;
+          case 'auth/missing-password':
+            this.msjError = 'Email/Contraseña invalido';
+            break;
           default:
             this.msjError = e.code;
             break;

@@ -1,0 +1,23 @@
+<div class="container">
+  <section class="flag-section">
+    <div class="flag-container">
+      <img
+        [src]="countries[countries.length - 1].flag.image"
+        [alt]="countries[countries.length - 1].flag.alt"
+        class="flag-image"
+      />
+    </div>
+  </section>
+  <section class="buttons-section">
+    <div *ngFor="let option of getOptions(); let i = index">
+      <button
+        mat-raised-button
+        color="primary"
+        class="country-button"
+        (click)="onCountryButtonClick(option)"
+      >
+        {{ option.name }}
+      </button>
+    </div>
+  </section>
+</div>

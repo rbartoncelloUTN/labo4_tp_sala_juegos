@@ -2,8 +2,8 @@
   <div class="container" id="container">
     <div class="form-container">
       <form action="#">
-        <h1>Sign in</h1>
-        <span>Use your account</span>
+        <h1>Iniciar sesion</h1>
+        <span>Use su cuenta</span>
         <input
           type="email"
           placeholder="Email"
@@ -23,19 +23,21 @@
         } @if(flagError){
         <p class="text-center text-primary">{{ msjError }}</p>
         }
-        <button (click)="login($event)">Sign In</button>
+        <button (click)="login($event)">Iniciar sesion</button>
         <button class="btn-auto-complete" (click)="autoComplete($event)">
-          Auto Complete
+          Auto Completado
         </button>
       </form>
     </div>
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-right">
-          <h1>Hello, Friend!</h1>
-          <p>Enter your personal details and start journey with us</p>
+          <h1>Holaaa, Broo!</h1>
+          <p>
+            Introduce tus datos personales y comienza tu viaje con nosotros.
+          </p>
           <button class="ghost" id="signUp" (click)="goTo('register')">
-            Sign Up
+            Registrarse
           </button>
         </div>
       </div>
