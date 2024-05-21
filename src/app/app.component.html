@@ -1,5 +1,7 @@
 @if (user) {
 <app-navbar></app-navbar>
+} @else {
+<app-login></app-login>
 }
 <div class="container">
   <router-outlet></router-outlet>

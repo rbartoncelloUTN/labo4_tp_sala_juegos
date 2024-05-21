@@ -9,6 +9,7 @@ import { AboutMeComponent } from './Component/about-me/about-me.component';
 import { ChatComponent } from './Component/chat/chat.component';
 import { HangedComponent } from './Component/hanged/hanged.component';
 import { CardsGameComponent } from './Component/cards-game/cards-game.component';
+import { CountryGameComponent } from './Component/country-game/country-game.component';
 
 export type RoutesParams = 'login' | 'register' | 'home';
 
@@ -23,5 +24,6 @@ export const routes: Routes = [
   { path: 'aboutMe', component: AboutMeComponent },
   { path: 'hanged', component: HangedComponent },
   { path: 'cards', component: CardsGameComponent },
+  { path: 'countries', component: CountryGameComponent },
   { path: '**', component: PageNotFoundComponentComponent },
 ];

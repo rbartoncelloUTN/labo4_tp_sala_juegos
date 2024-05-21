@@ -2,8 +2,8 @@
   <div class="container">
     <div class="form-container">
       <form action="#">
-        <h1>Create Account</h1>
-        <span>Use your email for registration</span>
+        <h1>Crear cuentas</h1>
+        <span>Use tu correo electronico para su registracion</span>
         <input
           type="email"
           placeholder="Email"
@@ -24,16 +24,19 @@
         } @if(flagError){
         <p class="text-center text-primary">{{ msjError }}</p>
         }
-        <button (click)="signUp($event)">Sign Up</button>
+        <button (click)="signUp($event)">Registrarse</button>
       </form>
     </div>
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel">
-          <h1>Welcome Back!</h1>
-          <p>To keep connected with us please login with your personal info</p>
+          <h1>Bienvendio de nuevo!</h1>
+          <p>
+            Para mantenerse conectado con nosotros, inicie sesión con su
+            información personal
+          </p>
           <button class="ghost" id="signIn" (click)="goTo('login')">
-            Sign In
+            Iniciar sesion
           </button>
         </div>
       </div>

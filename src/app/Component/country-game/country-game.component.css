@@ -1,0 +1,103 @@
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212; /* Fondo oscuro */
+  color: #ffffff; /* Texto claro */
+  padding: 20px;
+  text-align: center; /* Centrar el texto */
+}
+
+/* Sección de la bandera */
+.flag-section {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.flag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border: 5px solid #ffffff; /* Borde blanco */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra más oscura */
+}
+
+/* Sección de los botones */
+.buttons-section {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los botones se envuelvan */
+  gap: 15px; /* Espacio mayor entre botones */
+  justify-content: center;
+}
+
+.country-button {
+  padding: 15px 30px; /* Botones más grandes */
+  font-size: 18px; /* Texto más grande */
+  background-color: #1e88e5; /* Color azul */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  flex: 1 1 200px; /* Hacer los botones flexibles y responsivos */
+}
+
+.country-button:hover {
+  background-color: #1565c0; /* Azul más oscuro al hacer hover */
+  transform: translateY(-2px); /* Efecto de elevar botón */
+}
+
+.country-button:active {
+  background-color: #0d47a1; /* Azul aún más oscuro al hacer clic */
+}
+
+/* Clase para el botón correcto */
+.correct {
+  background-color: #4caf50 !important; /* Verde */
+}
+
+/* Media queries para ajustes responsivos */
+@media (max-width: 768px) {
+  .flag-image {
+    max-width: 300px;
+  }
+
+  .country-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flag-image {
+    max-width: 250px;
+  }
+
+  .country-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Snackbar styles */
+.snackbar-success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: #f44336;
+  color: white;
+}
