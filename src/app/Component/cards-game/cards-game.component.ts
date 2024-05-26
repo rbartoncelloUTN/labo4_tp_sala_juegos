@@ -6,6 +6,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Card, CardAPI } from '../../services/CardService/interfaces';
 import { CardComponent } from '../card/card.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { LoseDialogComponent } from '../lose-dialog/lose-dialog.component';
 
 @Component({
   selector: 'app-cards-game',
@@ -17,10 +19,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CardsGameComponent implements OnInit {
   public cards!: Card[];
   private apiUrl = 'https://deckofcardsapi.com/api/deck/new/draw/?count=52';
+  public pounts: number = 0;
 
-  constructor(private http: HttpClient, private _snackBar: MatSnackBar) {}
+  constructor(
+    private http: HttpClient,
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+    this.getCards();
+  }
+
+  getCards(): void {
     this.http.get<CardAPI>(this.apiUrl).subscribe((response) => {
       this.cards = response.cards.map((card) => {
         let cardUpload = card;
@@ -43,6 +54,7 @@ export class CardsGameComponent implements OnInit {
       });
     });
   }
+
   handleOnCardClick(): void {
     console.log('click');
     //this.cards.pop();
@@ -53,12 +65,18 @@ export class CardsGameComponent implements OnInit {
     const lastCard = this.cards.pop();
     const currentCard = this.cards[this.cards.length - 1];
 
-    let messaje = '0 pounts';
+    let messaje = '0 Puntos';
 
     if (Number(currentCard.value) < Number(lastCard?.value)) {
-      messaje = '1 pounts';
+      this.pounts += 1;
+      messaje = `${this.pounts} Puntos`;
     } else if (Number(currentCard.value) > Number(lastCard?.value)) {
-      messaje = '-1 pounts';
+      this.pounts -= 1;
+      messaje = `${this.pounts} Puntos`;
+    }
+    if (this.pounts < 1) {
+      messaje = 'Perdiste';
+      this.openLoseDialog();
     }
 
     this._snackBar.open(messaje, 'Ocultar');
@@ -71,11 +89,28 @@ export class CardsGameComponent implements OnInit {
     let messaje = '0 pounts';
 
     if (Number(currentCard.value) > Number(lastCard?.value)) {
-      messaje = '1 pounts';
+      this.pounts += 1;
+      messaje = `${this.pounts} Puntos`;
     } else if (Number(currentCard.value) < Number(lastCard?.value)) {
-      messaje = '-1 pounts';
+      this.pounts -= 1;
+      messaje = `${this.pounts} Puntos`;
+    }
+    if (this.pounts < 1) {
+      messaje = 'Perdiste';
+      this.openLoseDialog();
     }
 
     this._snackBar.open(messaje, 'Ocultar');
+  }
+
+  openLoseDialog() {
+    const dialogRef = this.dialog.open(LoseDialogComponent);
+    this.getCards();
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.getCards();
+      }
+    });
   }
 }

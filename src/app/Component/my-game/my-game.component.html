@@ -1,0 +1,49 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="fruits">
+        <img [src]="fruits[0]" alt="placeholder" />
+        <div>+</div>
+        <img [src]="fruits[0]" alt="placeholder" />
+        <div>+</div>
+        <img [src]="fruits[0]" alt="placeholder" />
+      </div>
+      <div class="answer">{{ answersGames[curentGame][0] }}</div>
+    </div>
+    <div class="row">
+      <div class="fruits">
+        <img [src]="fruits[0]" alt="placeholder" />
+        <div>+</div>
+        <img [src]="fruits[1]" alt="placeholder" />
+        <div>+</div>
+        <img [src]="fruits[1]" alt="placeholder" />
+      </div>
+      <div class="answer">{{ answersGames[curentGame][1] }}</div>
+    </div>
+    <div class="row">
+      <div class="fruits">
+        <img [src]="fruits[1]" alt="placeholder" />
+        <div>+</div>
+        <img [src]="fruits[2]" alt="placeholder" />
+        <div>+</div>
+        <img [src]="fruits[2]" alt="placeholder" />
+      </div>
+      <div class="answer">{{ answersGames[curentGame][2] }}</div>
+    </div>
+    <div class="row highlight">
+      <div class="fruits">
+        <img [src]="fruits[0]" alt="placeholder" />
+        <div>+</div>
+        <img [src]="fruits[1]" alt="placeholder" />
+        <div>-</div>
+        <img [src]="fruits[2]" alt="placeholder" />
+      </div>
+      <div class="answer">?</div>
+    </div>
+    <div class="buttons">
+      <div *ngFor="let option of options[curentGame]; let i = index">
+        <button (click)="handleOnClick(i)">{{ option }}</button>
+      </div>
+    </div>
+  </div>
+</body>
